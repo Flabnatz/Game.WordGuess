@@ -1,4 +1,4 @@
-from game.game_on import nlet, nlet_file
+from game.play import start
 
 # Initiate User Interaction
 print('Would you like to play the Word Guessing Game? [y/n]: ')
@@ -13,14 +13,16 @@ n_inputs = ['n', 'N', 'no', 'No', 'nay', 'Nay']
 is_play = True
 while is_play:
     if is_begin in y_inputs:
-        print("Let's play!")
+        is_win = start()
 
-        # How many letters to play with?
-        #   n = [n(int), is_play(bool), note(str)]
-        n = nlet()
+        print("Good Game!")
+        print("Would you like to play again? [y/n]: ")
+        is_begin = input()
     elif is_begin in n_inputs:
-        print("Maybe next time!")
+        print("Maybe next time...")
         is_play = False
     else:
         print("Error: unacceptable input.  Press 'y' to play or 'n' to stop.")
         is_begin = input()
+
+print("Thanks for playing!")
